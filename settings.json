@@ -1,0 +1,38 @@
+[
+    {
+        "keywords": "KIRTASIYE, OFIS, BÜRO, KIRTASİYE",
+        "code": "770.01"
+    },
+    {
+        "keywords": "MARKET, GIDA, RESTORAN, KAFE, LOKANTA, YEMEK, SÜPERMARKET",
+        "code": "770.02"
+    },
+    {
+        "keywords": "PETROL, AKARYAKIT, OTOMOTİV, SHELL, OPET, BP",
+        "code": "760.01"
+    },
+    {
+        "keywords": "ELEKTRİK, ENERJİ, TEDAŞ, AYEDAŞ, ENERJİSA, ELEKTRIK",
+        "code": "770.04"
+    },
+    {
+        "keywords": "SU, İSKİ, ASKİ, İZSU, BUSKİ",
+        "code": "770.05"
+    },
+    {
+        "keywords": "TELEKOM, İLETİŞİM, TELEFON, TURKCELL, VODAFONE, TTNET, ILETISIM",
+        "code": "770.06"
+    },
+    {
+        "keywords": "KARGO, LOJİSTİK, NAKLİYAT, YURTİÇİ, ARAS, MNG, SÜRAT, LOJISTIK",
+        "code": "760.02"
+    },
+    {
+        "keywords": "SİGORTA, KASKO, ALLİANZ, ANADOLU SİGORTA, SIGORTA",
+        "code": "770.07"
+    },
+    {
+        "keywords": "PROTEİNOCEAN GIDA A.Ş",
+        "code": "778"
+    }
+]
