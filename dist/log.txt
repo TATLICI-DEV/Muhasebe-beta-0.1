@@ -1,0 +1,124 @@
+
+====================== PDF ISLENIYOR ======================
+PATH: uploads\PN12025000125583.pdf
+
+--- TEXT CIKTISI (ILK 300 KARAKTER) ---
+PROTEİNOCEAN GIDA A.Ş.
+Ostim OSB Mah. 1268. Cad. No:11 06374
+Yenimahalle, ANKARA – Türkiye
+Vergi No
+7330889234 (OSTİM)
+Ticaret Sicil No
+399170 e-Arşiv
+Mersis No
+0733 0889 2340 0001
+Sayın
+Tuğrahan Alp İnan
+Ovacık mahallesi burçak sokak kavakçılık
+hızlı gelişen orman müdürlüğü ek yerleşkesi a
+blok 21/
+---------------------------------------
+
+[BULUNDU] Fatura Tarihi (Heuristic Yakinlik): 16.03.2025
+[BULUNDU] VKN/TCKN (Skor:150): 7330889234
+[BULUNDU] Firma Adi (Heuristic Score): PROTEİNOCEAN GIDA A.Ş.
+[BULUNDU] Fatura No (Regex): PN12025000125583
+[BILGI] Matrah mevcut regex (Matrah, Ara Toplam vs.) ile bulunamadi.
+[BILGI] KDV Tutari mevcut regex (KDV Tutari, Vergi) ile bulunamadi.
+[BULUNDU] Genel Toplam (Regex): 1389.6
+[BULUNDU] KDV Orani (1%) metinden sezgisel bulundu.
+[HESAPLANDI] Matrah (1375.84) ve KDV (13.76) Toplam uzerinden matematiksel olarak bulundu.
+[AKILLI ATAMA] Varsayilan Gider Hesabi -> 770 (Eslesme Yok)
+===========================================================
+
+
+====================== PDF ISLENIYOR ======================
+PATH: uploads\100550NFpSGKFATURA.pdf
+
+--- TEXT CIKTISI (ILK 300 KARAKTER) ---
+FATURA ÖRNEĞİ
+17. BÖLGE ZONGULDAK ECZACI ODASI
+FATURA SIRA NO
+Sayın,
+ÖRNEKTİR
+T.C. SOSYAL GÜVENLİK KURUMU
+Seri: A ÖRNEKTİR
+BAŞKANLIĞI GENEL SAGLIK SIGORTASI
+İrs. No :
+ÖRNEKTİR
+GENEL MÜDÜRLÜGÜ / ANKARA
+İrs. Tarih :
+Fatura Tarihi :. . / . . / 2018
+Vergi Dairesi : Ç A N K A Y A
+ÖRNEKTİR
+Vergi No : 7750
+---------------------------------------
+
+[BILGI] Fatura Tarihi bulunamadi.
+[BULUNDU] VKN/TCKN (Skor:100): 7750409379
+[BULUNDU] Firma Adi (Heuristic Score): 17. BÖLGE ZONGULDAK ECZACI ODASI
+[BULUNDU] Fatura No (Regex): SIRA
+[BILGI] Matrah mevcut regex (Matrah, Ara Toplam vs.) ile bulunamadi.
+[BILGI] KDV Tutari mevcut regex (KDV Tutari, Vergi) ile bulunamadi.
+[BULUNDU] Genel Toplam (Regex): 29412.0
+[BULUNDU] KDV Orani (20%) metinden sezgisel bulundu.
+[HESAPLANDI] Matrah (24510.0) ve KDV (4902.0) Toplam uzerinden matematiksel olarak bulundu.
+[AKILLI ATAMA] Varsayilan Gider Hesabi -> 770 (Eslesme Yok)
+===========================================================
+
+
+====================== PDF ISLENIYOR ======================
+PATH: uploads\PN12025000125583.pdf
+
+--- TEXT CIKTISI (ILK 300 KARAKTER) ---
+PROTEİNOCEAN GIDA A.Ş.
+Ostim OSB Mah. 1268. Cad. No:11 06374
+Yenimahalle, ANKARA – Türkiye
+Vergi No
+7330889234 (OSTİM)
+Ticaret Sicil No
+399170 e-Arşiv
+Mersis No
+0733 0889 2340 0001
+Sayın
+Tuğrahan Alp İnan
+Ovacık mahallesi burçak sokak kavakçılık
+hızlı gelişen orman müdürlüğü ek yerleşkesi a
+blok 21/
+---------------------------------------
+
+[BULUNDU] Fatura Tarihi (Heuristic Yakinlik): 16.03.2025
+[BULUNDU] VKN/TCKN (Skor:150): 7330889234
+[BULUNDU] Firma Adi (Heuristic Score): PROTEİNOCEAN GIDA A.Ş.
+[BULUNDU] Fatura No (Regex): PN12025000125583
+[BILGI] Matrah mevcut regex (Matrah, Ara Toplam vs.) ile bulunamadi.
+[BILGI] KDV Tutari mevcut regex (KDV Tutari, Vergi) ile bulunamadi.
+[BULUNDU] Genel Toplam (Regex): 1389.6
+[BULUNDU] KDV Orani (1%) metinden sezgisel bulundu.
+[HESAPLANDI] Matrah (1375.84) ve KDV (13.76) Toplam uzerinden matematiksel olarak bulundu.
+[AKILLI ATAMA] Varsayilan Gider Hesabi -> 770 (Eslesme Yok)
+===========================================================
+
+
+====================== PDF ISLENIYOR ======================
+PATH: uploads\satis-faturalari.pdf
+
+--- TEXT CIKTISI (ILK 300 KARAKTER) ---
+2- 03.09.2022 tarihinde SEKTÖR İnşaat LTD.ŞTİ. firması aşağıdaki ihtiyaç listesi için satış teklifi verilmiştir.03.09.2022
+Tarihinde firma teklifi onay vermiştir. Sİ-0001 İle ürünler teslim edilmiştir. . 03.09.2022 tarihinde KOB2022000000001
+Numaralı e-arşiv fatura kesilerek gönderilmiştir.
+ÖRNEK SA
+---------------------------------------
+
+[BULUNDU] Fatura Tarihi (Heuristic Yakinlik): 03.09.2022
+[BULUNDU] VKN/TCKN (Skor:150): 9999999991
+[BULUNDU] Firma Adi (Heuristic Score): ADI - ÜNVANI : SEKTÖR İNŞAAT LTD.ŞTİ.
+[BULUNDU] Fatura No (Regex): KOB2022000000001
+[BULUNDU] Matrah (Regex): 10000.0
+[BILGI] KDV Tutari mevcut regex (KDV Tutari, Vergi) ile bulunamadi.
+[BILGI] Genel Toplam mevcut regex ile bulunamadi.
+[BILGI] KDV Orani bulunamadi. Varsayilan %20 atandi (estimated).
+[HESAPLANDI] KDV (2000.0) ve Toplam (12000.0) Matrah uzerinden matematiksel olarak bulundu.
+[AKILLI ATAMA] Varsayilan Gider Hesabi -> 770 (Eslesme Yok)
+===========================================================
+
