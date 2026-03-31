@@ -1,0 +1,1 @@
+[Errno 10048] error while attempting to bind on address ('127.0.0.1', 8000): [winerror 10048] normal olarak her yuva adresi (iletişim kuralı/ağ adresi/bağlantı noktası) için yalnızca bir kullanıma izin veriliyor

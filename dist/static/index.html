@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akıllı Fatura Muhasebeleştirme</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="background-animation"></div>
+    <div class="container glass-panel">
+        <div class="nav-tabs">
+            <button class="tab-btn active" data-target="upload-flow">🚀 Yeni Fatura Yükle</button>
+            <button class="tab-btn" data-target="dashboard-section">📊 Geçmiş İşlemler</button>
+            <button class="tab-btn" data-target="settings-section">⚙️ Yapay Zeka Kuralları</button>
+        </div>
+        
+        <div id="upload-flow">
+            <header>
+            <h1>Fatura İşleme Merkezi</h1>
+            <p>PDF faturalarınızı yükleyin, otomatik veri çıkarımı ile muhasebeleştirin.</p>
+        </header>
+
+        <div id="upload-section" class="section active">
+            <div class="upload-area" id="drop-zone">
+                <input type="file" id="pdf-upload" accept="application/pdf" multiple hidden>
+                <button type="button" class="btn-primary" onclick="document.getElementById('pdf-upload').click()">
+                    PDF Fatura Seçin
+                </button>
+                <p>veya sürükleyip bırakın</p>
+                <div id="upload-progress" class="hidden">
+                    <div class="spinner"></div><p>PDF İşleniyor, veri çıkarılıyor...</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="review-section" class="section">
+            <h2 id="review-title">Fatura Verisi Doğrulama</h2>
+            <form id="invoice-form">
+                <div class="grid-2">
+                    <div class="form-group">
+                        <label>Fatura Tarihi</label>
+                        <input type="text" id="invoice_date">
+                    </div>
+                    <div class="form-group">
+                        <label>Fatura No</label>
+                        <input type="text" id="invoice_number">
+                    </div>
+                    <div class="form-group">
+                        <label>VKN / TCKN</label>
+                        <input type="text" id="vkn">
+                    </div>
+                    <div class="form-group">
+                        <label>Firma Adı</label>
+                        <input type="text" id="company_name">
+                    </div>
+                </div>
+
+                <div class="divider">Tutar ve Vergi</div>
+                
+                <div class="grid-3">
+                    <div class="form-group">
+                        <label>Matrah (TL)</label>
+                        <input type="number" step="0.01" id="base_amount">
+                    </div>
+                    <div class="form-group">
+                        <label>KDV Oranı (%)</label>
+                        <input type="number" step="1" id="vat_rate">
+                    </div>
+                    <div class="form-group">
+                        <label>KDV Tutarı (TL)</label>
+                        <input type="number" step="0.01" id="vat_amount">
+                    </div>
+                </div>
+                <div class="form-group highlight-field">
+                    <label>Genel Toplam (TL)</label>
+                    <input type="number" step="0.01" id="total_amount">
+                </div>
+
+                <div class="divider">Muhasebe Hesapları</div>
+                <div class="grid-3">
+                    <div class="form-group">
+                        <label>Gider Hesabı</label>
+                        <input type="text" id="expense_account" value="770">
+                    </div>
+                    <div class="form-group">
+                        <label>KDV Hesabı</label>
+                        <input type="text" id="vat_account" value="191">
+                    </div>
+                    <div class="form-group">
+                        <label>Cari Hesap (Satıcı)</label>
+                        <input type="text" id="vendor_account" value="320">
+                    </div>
+                </div>
+
+                <div class="actions">
+                    <button type="button" class="btn-secondary" id="btn-cancel">İptal</button>
+                    <button type="button" class="btn-primary" id="btn-save">Kaydet ve Muhasebeleştir</button>
+                </div>
+            </form>
+        </div>
+
+        <div id="success-section" class="section">
+            <div class="success-message">
+                <div class="check-icon">✓</div>
+                <h2>Başarıyla Muhasebeleştirildi!</h2>
+                <p>Veriler veritabanına işlendi ve muhasebe fişleri oluşturuldu.</p>
+                <div id="download-links-container" style="margin-top:20px; display:flex; flex-direction:column; gap:10px; max-height: 250px; overflow-y: auto; padding-right:10px;"></div>
+                <div class="actions center mt-10">
+                    <button type="button" class="btn-secondary" id="btn-new">Yeni Yüklemeler Yap</button>
+                </div>
+            </div>
+        </div>
+        </div> <!-- /upload-flow bitis -->
+
+        <!-- YENİ DASHBOARD BÖLÜMÜ -->
+        <div id="dashboard-section" style="display:none;">
+            <header>
+                <h1>Arşiv ve Yönetim</h1>
+                <p>Geçmiş tüm işlemlerinizi görüntüleyin ve seçtiklerinizi toplu raporlayın.</p>
+            </header>
+            
+            <div class="grid-3 kpi-grid">
+                <div class="form-group kpi-card">
+                    <label>Toplam İşlenen Belge</label>
+                    <div class="kpi-value" id="kpi-count">0</div>
+                </div>
+                <div class="form-group kpi-card highlight-field">
+                    <label>Toplam Matrah Hacmi</label>
+                    <div class="kpi-value" id="kpi-base">0.00 TL</div>
+                </div>
+                <div class="form-group kpi-card">
+                    <label>Toplam Oluşan KDV</label>
+                    <div class="kpi-value" id="kpi-vat">0.00 TL</div>
+                </div>
+            </div>
+
+            <div style="overflow-x: auto; margin-top: 20px; background: rgba(0,0,0,0.1); border-radius: 8px; border: 1px solid var(--glass-border);">
+                <table class="history-table" style="width: 100%; border-collapse: collapse; text-align: left;">
+                    <thead>
+                        <tr style="border-bottom: 1px solid var(--glass-border); background: rgba(255,255,255,0.05);">
+                            <th style="padding: 12px;"><input type="checkbox" id="selectAllCheckbox"></th>
+                            <th style="padding: 12px;">Tarih</th>
+                            <th style="padding: 12px;">Evrak No</th>
+                            <th style="padding: 12px;">Firma Adı</th>
+                            <th style="padding: 12px;">Genel Toplam</th>
+                        </tr>
+                    </thead>
+                    <tbody id="history-tbody">
+                        <!-- JS ile dolacak -->
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="actions center mt-10" style="flex-direction:row; justify-content:center; gap: 15px;">
+                <button type="button" class="btn-primary" id="btn-re-generate" disabled> Seçili Fişlerden Toplu Rapor Üret (Excel/PDF)</button>
+                <button type="button" class="btn-primary" style="background:#dc2626; border-color:#dc2626;" id="btn-delete" disabled>🗑️ Seçili Evrakları Sil</button>
+            </div>
+            <div id="dashboard-links-container" style="margin-top:20px; display:flex; flex-direction:column; gap:10px; text-align:center;"></div>
+        </div>
+
+        <!-- YENİ AYARLAR BÖLÜMÜ -->
+        <div id="settings-section" style="display:none;">
+            <header>
+                <h1>Akıllı Kategori Motoru</h1>
+                <p>Yapay zekanın hangi anahtar kelimeyi gördüğünde hangi hesap kodunu atayacağını belirleyin.</p>
+            </header>
+            
+            <div class="glass-panel" style="padding: 20px; text-align: left; background: rgba(0,0,0,0.1); border-radius: 8px; border: 1px solid var(--glass-border);">
+                <h3 style="margin-bottom: 15px; border-bottom: 1px solid var(--glass-border); padding-bottom: 10px;">Yeni Kural Ekle</h3>
+                <div class="grid-3" style="grid-template-columns: 2fr 1fr auto; align-items: end; gap:15px;">
+                    <div class="form-group" style="margin-bottom: 0;">
+                        <label>Aranacak Kelimeler (Virgülle ayırın)</label>
+                        <input type="text" id="new-keyword" placeholder="Örn: BİLGİSAYAR, TEKNOLOJİ, VATAN" />
+                    </div>
+                    <div class="form-group" style="margin-bottom: 0;">
+                        <label>Hesap Kodu</label>
+                        <input type="text" id="new-code" placeholder="Örn: 255.01" />
+                    </div>
+                    <div>
+                        <button type="button" class="btn-success" id="btn-add-rule" style="width: 100%;">Ekle</button>
+                    </div>
+                </div>
+            </div>
+
+            <div style="overflow-x: auto; margin-top: 20px; background: rgba(0,0,0,0.1); border-radius: 8px; border: 1px solid var(--glass-border);">
+                <table class="history-table" style="width: 100%; border-collapse: collapse; text-align: left;">
+                    <thead>
+                        <tr style="border-bottom: 1px solid var(--glass-border); background: rgba(255,255,255,0.05);">
+                            <th style="padding: 12px;">Anahtar Kelimeler</th>
+                            <th style="padding: 12px; width:150px;">Hesap Kodu</th>
+                            <th style="padding: 12px; width:100px; text-align:right;">İşlem</th>
+                        </tr>
+                    </thead>
+                    <tbody id="settings-tbody">
+                        <!-- JS ile dolacak -->
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="actions center mt-10">
+                <button type="button" class="btn-primary" id="btn-save-settings">💾 Tüm Değişiklikleri Kaydet</button>
+            </div>
+        </div>
+
+    </div>
+    
+    <script src="/static/app.js"></script>
+</body>
+</html>
